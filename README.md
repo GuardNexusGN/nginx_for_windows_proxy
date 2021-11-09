@@ -20,7 +20,6 @@ powershell -File C:\nginx\Install-Nginx.ps1 -Version 1.21.1 -InstallPath C:\ngin
 New-NetFirewallRule -DisplayName 'nginx_server' -Direction Inbound -Action Allow -Protocol TCP -LocalPort 80
 
 #new nginx conf for proxy
-Remove-Item C:\nginx\conf\nginx.conf
 (new-object net.webclient).DownloadFile($get_nginx_conf_link,'C:\nginx\conf\nginx.conf')
 Restart-Service -Name nginx
 
