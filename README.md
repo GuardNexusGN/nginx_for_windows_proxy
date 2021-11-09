@@ -1,4 +1,4 @@
-# Simple nginx with sonfigured proxy on windows vm
+# Simple nginx proxy server on windows vm
 
 Powershell script ot run:
 ```
