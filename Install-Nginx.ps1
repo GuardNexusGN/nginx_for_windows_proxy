@@ -10,7 +10,6 @@
 $here = Split-Path $MyInvocation.MyCommand.Path -Parent
 
 $nginxDownloadUrl = "http://nginx.org/download/nginx-${Version}.zip"
-$winswDownloadUrl = "https://github.com/guanwei/install-nginx-on-windows/blob/master/winsw-2.1.2-bin.exe?raw=true"
 
 if(!$DownloadPath)
 {
@@ -56,10 +55,7 @@ if($winswDownloadFile)
 }
 else
 {
-    # download winsw
-    Write-Output "Downloading winsw from $winswDownloadUrl to $winswDownloadFile"
-	$winswDownloadFile = "winsw-2.1.2-bin.exe"
-    Invoke-WebRequest -Uri $winswDownloadUrl -OutFile $winswDownloadFile
+    Write-Error "winsw exe is not found"
 }
 
 $winswFile = Join-Path "$InstallPath" "nginx-service.exe"
