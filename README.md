@@ -20,3 +20,5 @@ Restart-Service -Name nginx
 
 New-NetFirewallRule -DisplayName 'nginx_server' -Direction Inbound -Action Allow -Protocol TCP -LocalPort 80
 ```
+
+PS1 script by: https://github.com/guanwei
